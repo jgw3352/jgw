@@ -35,4 +35,4 @@ class AccountCreateView(CreateView):
     modle = User
     form_class = UserCreationForm
     success_url = reverse_lazy('projects:hello_world')
-    template_name = 'projects/create'
+    template_name = 'projects/create.html'
