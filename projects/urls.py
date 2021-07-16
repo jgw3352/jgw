@@ -1,13 +1,18 @@
-from django.contrib import admin
-from django.http import HttpResponse
-from django.urls import path, include
+from django.contrib.auth.views import LoginView, LogoutView
+from django.urls import path
 
-from projects.views import hello_world, AccountCreateView
+from projects.views import hello_world, AccountCreateView, AccountDetailView
 
 app_name = 'projects'
 
 urlpatterns = [
     path('hello_world/', hello_world, name='hello_world'),
 
-    path('create/', AccountCreateView.as_view(), name='create')
+    path('login/', LoginView.as_view(template_name='projects/login.html'),
+         name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+
+    path('create/', AccountCreateView.as_view(), name='create'),
+
+    path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
 ]

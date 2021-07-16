@@ -14,3 +14,9 @@
 .pragmatic_putter_button {
     margin-top: 1.5rem ;
 }
+
+
+.mw-500 {
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+}
