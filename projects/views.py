@@ -40,5 +40,5 @@ class AccountCreateView(CreateView):
 
 class AccountDetailView(DetailView):
     model = User
-    contest_object_name = 'target_user'
+    context_object_name = 'target_user'
     template_name = 'projects/detail.html'
