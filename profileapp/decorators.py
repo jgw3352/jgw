@@ -9,5 +9,5 @@ def profile_ownership_required(func):
         if target_profile.user == request.user:
             return func(request, *args, **kwargs)
         else:
-            return HttpResponseForbidden
+            return HttpResponseForbidden()
     return decorated

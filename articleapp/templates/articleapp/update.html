@@ -6,10 +6,11 @@
 
     <div class="text-center mw-500 m-auto">
         <div class="m-5">
-            <h4>Sign Up</h4>
+            <h4>Update Article</h4>
         </div>
         <div>
-            <form action="{% url 'projects:create' %}" method="post">
+            <form action="{% url 'articleapp:update' pk=target_article.pk %}"
+                  method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
                 <div class="m-5">
