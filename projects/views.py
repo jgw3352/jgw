@@ -22,7 +22,7 @@ def hello_world(request):
         new_model = NewModel()
         new_model.text = temp
         new_model.save()
-        return HttpResponseRedirect(reverse('accountapp:hello_world'))
+        return HttpResponseRedirect(reverse('projects:hello_world'))
     else:
         data_list = NewModel.objects.all()
         return render(request, 'projects/hello_world.html',
