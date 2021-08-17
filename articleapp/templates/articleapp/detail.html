@@ -39,6 +39,41 @@
 
         <div>
             {#      댓글 내용, 댓글 작성란      #}
+
+            {% for comment in target_article.commnet.all  %}
+
+                <div class="comment_box">
+
+                    <div>
+                        <span class="NNS_B"
+                                style="font-size: 1.3rem;">
+                            {{ comment.writer.profile.nickname }}</span>
+                        <span>{{ comment.created_at }}</span>
+                    </div>
+                    <div>
+                        <p>
+                            {{ commnet.content }}
+                        </p>
+                    </div>
+                    {% if comment.writer == user %}
+                    <div style="text-align: right">
+                        <a href="{% url 'commentapp:delete' pk=comment.pk%}"
+                           class="btn btn-danger rounded-pill px-5">
+                            Delete
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+
+
+            {% endfor %}
+
+
+            {% include 'commentapp/create.html' %}
+
+
+
+
         </div>
     </div>
 
