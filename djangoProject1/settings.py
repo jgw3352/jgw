@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'articleapp',
     'commentapp',
     'projectapp',
-    'subsribeapp',
+    'subscribeapp',
 ]
 
 MIDDLEWARE = [
