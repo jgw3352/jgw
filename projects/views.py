@@ -16,25 +16,25 @@ from projects.forms import AccountCreationForm
 from projects.models import NewModel
 
 
-@login_required
-def hello_world(request):
-    if request.method == "POST":
-        temp = request.POST.get('next')
-
-        new_model = NewModel()
-        new_model.text = temp
-        new_model.save()
-        return HttpResponseRedirect(reverse('projects:hello_world'))
-    else:
-        data_list = NewModel.objects.all()
-        return render(request, 'projects/hello_world.html',
-                      context={'data_list': data_list})
+# @login_required
+# def hello_world(request):
+#     if request.method == "POST":
+#         temp = request.POST.get('next')
+#
+#         new_model = NewModel()
+#         new_model.text = temp
+#         new_model.save()
+#         return HttpResponseRedirect(reverse('projects:hello_world'))
+#     else:
+#         data_list = NewModel.objects.all()
+#         return render(request, 'projects/hello_world.html',
+#                       context={'data_list': data_list})
 
 
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('projects:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'projects/create.html'
 
 
@@ -70,5 +70,5 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'projects/delete.html'
