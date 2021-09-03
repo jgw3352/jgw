@@ -10,7 +10,7 @@ RUN echo "SECRET_KEY=django-insecure-+6v0ppfjmbrc9l7^w(9en#mmf#1b8w%r8yb&9lzpy_l
 
 RUN pip install -r requirements.txt
 
-RUN python mangae.py migrate
+RUN python manage.py migrate
 
 EXPOSE 8000
 
