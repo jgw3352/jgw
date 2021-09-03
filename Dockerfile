@@ -2,6 +2,8 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
+RUN echo "dasfsaf"
+
 RUN git clone https://github.com/jgw3352/jgw.git
 
 WORKDIR /home/GIS_4_2_Web/
