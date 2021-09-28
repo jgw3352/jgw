@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "dasddfdfdfdfdffsaf"
+RUN echo "dasddfdfdfddfdfdffsaf"
 
 RUN git clone https://github.com/jgw3352/jgw.git
 
